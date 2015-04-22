@@ -50,13 +50,13 @@ public class MainActivity extends ActionBarActivity {
         Player current = lifeTracker.get(index);
 
         switch (v.getTag().toString()) {
-            case "pos1": current.changeLife(1);
+            case "pos1": current.addLife(1);
                 break;
-            case "pos5": current.changeLife(5);
+            case "pos5": current.addLife(5);
                 break;
-            case "neg1": current.changeLife(-1);
+            case "neg1": current.subtractLife(1);
                 break;
-            case "neg5": current.changeLife(-5);
+            case "neg5": current.subtractLife(5);
                 break;
         }
 
@@ -69,7 +69,7 @@ public class MainActivity extends ActionBarActivity {
             toast.show();
             life.setText("0");
         } else {
-            life.setText(current.getLife());
+            life.setText(current.getLife() + "");
         }
 
     }

@@ -49,8 +49,12 @@ public class Player {
         this.name = name;
     }
 
-    public void changeLife(int change) {
+    public void addLife(int change) {
         life += change;
+    }
+
+    public void subtractLife(int change) {
+        life -= change;
     }
 
     public boolean isDead() {

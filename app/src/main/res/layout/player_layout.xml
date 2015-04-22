@@ -12,6 +12,7 @@
     <Button
         style="?android:attr/buttonStyleSmall"
         android:tag="pos1"
+        android:onClick="clickFunction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/add"
@@ -24,6 +25,7 @@
     <Button
         style="?android:attr/buttonStyleSmall"
         android:tag="neg1"
+        android:onClick="clickFunction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/minus"
@@ -48,6 +50,7 @@
     <Button
         style="?android:attr/buttonStyleSmall"
         android:tag="pos5"
+        android:onClick="clickFunction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/add5"
@@ -60,6 +63,7 @@
     <Button
         style="?android:attr/buttonStyleSmall"
         android:tag="neg5"
+        android:onClick="clickFunction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/minus5"
