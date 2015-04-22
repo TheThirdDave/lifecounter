@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">lifecounter</string>
+
+    <string name="player_name">Player </string>
+    <string name="action_settings">Settings</string>
+    <string name="add">+</string>
+    <string name="add5">+5</string>
+    <string name="minus">-</string>
+    <string name="minus5">-5</string>
+    <string name="startCounter">20</string>
+</resources>
