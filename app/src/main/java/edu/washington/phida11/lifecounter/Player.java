@@ -8,6 +8,7 @@ public class Player {
     public static final int STARTING_LIFE = 20;
 
     private int ID;
+    private String name;
     private int life;
 
     public Player(int id) {
@@ -15,8 +16,17 @@ public class Player {
     }
 
     public Player(int id, int life) {
+        this(id, "", life);
+    }
+
+    public Player(int id, String name) {
+        this(id, name, STARTING_LIFE);
+    }
+
+    public Player(int id, String name, int life) {
         this.ID = id;
         this.life = life;
+        this.name = name;
     }
 
     public int getLife() {
@@ -27,8 +37,16 @@ public class Player {
         return ID;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public void setLife(int newLife) {
         this.life = newLife;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public void changeLife(int change) {
