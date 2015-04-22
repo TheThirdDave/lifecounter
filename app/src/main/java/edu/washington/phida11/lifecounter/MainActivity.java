@@ -26,11 +26,11 @@ public class MainActivity extends ActionBarActivity {
         if (savedInstanceState == null) {
             for (int i = 0; i < 4; i++) {
 
-                int playerLayoutID = getResources().getIdentifier(("player"+i+1), "id", getPackageName());
+                int playerLayoutID = getResources().getIdentifier(("player"+(i+1)), "id", getPackageName());
                 RelativeLayout playerLayout = (RelativeLayout) findViewById(playerLayoutID);
 
                 TextView playerName = (TextView) playerLayout.findViewById(R.id.personTitle);
-                String fullName = getResources().getString(R.string.player_name) + i + 1;
+                String fullName = getResources().getString(R.string.player_name) + (i + 1);
 
                 //Sets the player name
                 playerName.setText(fullName);
@@ -66,6 +66,7 @@ public class MainActivity extends ActionBarActivity {
             int duration = Toast.LENGTH_SHORT;
 
             Toast toast = Toast.makeText(context, text, duration);
+            toast.show();
             life.setText("0");
         } else {
             life.setText(current.getLife());
