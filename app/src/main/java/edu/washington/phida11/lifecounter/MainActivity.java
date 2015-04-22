@@ -18,6 +18,8 @@ import java.util.ArrayList;
 public class MainActivity extends ActionBarActivity {
     private ArrayList<Player> lifeTracker = new ArrayList<Player>();
 
+    private static final String SAVED_PLAYERS = "pastPlayers";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +38,22 @@ public class MainActivity extends ActionBarActivity {
                 playerName.setText(fullName);
 
                 lifeTracker.add(new Player(playerLayoutID, fullName));
+            }
+        } else {
+            int[] savedPlayers = savedInstanceState.getIntArray(SAVED_PLAYERS);
+
+            for (int i = 0; i < 4; i++) {
+
+                int playerLayoutID = getResources().getIdentifier(("player"+(i+1)), "id", getPackageName());
+                RelativeLayout playerLayout = (RelativeLayout) findViewById(playerLayoutID);
+
+                TextView playerName = (TextView) playerLayout.findViewById(R.id.personTitle);
+                String fullName = getResources().getString(R.string.player_name) + (i + 1);
+
+                //Sets the player name
+                playerName.setText(fullName);
+
+                lifeTracker.add(new Player(playerLayoutID, fullName, savedPlayers[i]));
             }
         }
     }
@@ -72,6 +90,16 @@ public class MainActivity extends ActionBarActivity {
             life.setText(current.getLife() + "");
         }
 
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle bundle) {
+        int[] lives = new int[lifeTracker.size()];
+        for (int i = 0; i < lives.length; ++i) {
+            lives[i] = lifeTracker.get(i).getLife();
+        }
+
+        bundle.putIntArray(SAVED_PLAYERS, lives);
     }
 
     @Override
